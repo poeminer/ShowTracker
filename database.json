@@ -1,0 +1,289 @@
+[
+  {
+    "title": "A Discovery of Witches",
+    "type": "TV Show",
+    "status": "Watching",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T00:53:13.506Z"
+  },
+  {
+    "title": "Castle",
+    "type": "TV Show",
+    "status": "Watching",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T00:53:32.502Z"
+  },
+  {
+    "title": "Charmed",
+    "type": "TV Show",
+    "status": "Completed",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T00:53:42.171Z"
+  },
+  {
+    "title": "Day 5",
+    "type": "TV Show",
+    "status": "Completed",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T00:54:13.115Z"
+  },
+  {
+    "title": "Departure",
+    "type": "TV Show",
+    "status": "Watching",
+    "stillFilming": true,
+    "addedAt": "2026-06-06T00:55:15.597Z"
+  },
+  {
+    "title": "Game Of Thrones",
+    "type": "TV Show",
+    "status": "Completed",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T00:55:26.641Z"
+  },
+  {
+    "title": "Helgoland 513",
+    "type": "TV Show",
+    "status": "Plan to Watch",
+    "stillFilming": true,
+    "addedAt": "2026-06-06T00:55:53.895Z"
+  },
+  {
+    "title": "His Dark Materials",
+    "type": "TV Show",
+    "status": "Plan to Watch",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T00:56:18.538Z"
+  },
+  {
+    "title": "House Of The Dragon",
+    "type": "TV Show",
+    "status": "Plan to Watch",
+    "stillFilming": true,
+    "addedAt": "2026-06-06T00:56:27.917Z"
+  },
+  {
+    "title": "Last of us",
+    "type": "TV Show",
+    "status": "Watching",
+    "stillFilming": true,
+    "addedAt": "2026-06-06T00:56:43.859Z"
+  },
+  {
+    "title": "Originals",
+    "type": "TV Show",
+    "status": "Plan to Watch",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T00:56:51.965Z"
+  },
+  {
+    "title": "Raised by Wolvers",
+    "type": "TV Show",
+    "status": "Plan to Watch",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T00:56:57.824Z"
+  },
+  {
+    "title": "Revolution",
+    "type": "TV Show",
+    "status": "Completed",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T00:57:11.745Z"
+  },
+  {
+    "title": "Sandman",
+    "type": "TV Show",
+    "status": "Plan to Watch",
+    "stillFilming": true,
+    "addedAt": "2026-06-06T00:57:30.425Z"
+  },
+  {
+    "title": "Strain",
+    "type": "TV Show",
+    "status": "Completed",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T00:57:37.769Z"
+  },
+  {
+    "title": "Supernatural",
+    "type": "TV Show",
+    "status": "Watching",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T00:57:47.217Z"
+  },
+  {
+    "title": "Sweet Home",
+    "type": "TV Show",
+    "status": "Watching",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T00:57:55.487Z"
+  },
+  {
+    "title": "The Big Bang Theory",
+    "type": "TV Show",
+    "status": "Plan to Watch",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T00:58:01.731Z"
+  },
+  {
+    "title": "The Lord of the Rings: The Rings of Power",
+    "type": "TV Show",
+    "status": "Plan to Watch",
+    "stillFilming": true,
+    "addedAt": "2026-06-06T00:58:07.015Z"
+  },
+  {
+    "title": "The Night Of",
+    "type": "TV Show",
+    "status": "Plan to Watch",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T00:58:24.404Z"
+  },
+  {
+    "title": "True Detective",
+    "type": "TV Show",
+    "status": "Plan to Watch",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T00:58:28.132Z"
+  },
+  {
+    "title": "True Detective - Night Country",
+    "type": "TV Show",
+    "status": "Plan to Watch",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T00:58:31.257Z"
+  },
+  {
+    "title": "Vampire Diaries",
+    "type": "TV Show",
+    "status": "Watching",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T00:58:36.617Z"
+  },
+  {
+    "title": "Walking Dead",
+    "type": "TV Show",
+    "status": "Watching",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T00:58:42.208Z"
+  },
+  {
+    "title": "From",
+    "type": "TV Show",
+    "status": "Watching",
+    "stillFilming": true,
+    "addedAt": "2026-06-06T00:58:47.780Z"
+  },
+  {
+    "title": "Ivalo",
+    "type": "TV Show",
+    "status": "Watching",
+    "stillFilming": true,
+    "addedAt": "2026-06-06T00:59:06.641Z"
+  },
+  {
+    "title": "The Eternaut",
+    "type": "TV Show",
+    "status": "Watching",
+    "stillFilming": true,
+    "addedAt": "2026-06-06T00:59:29.882Z"
+  },
+  {
+    "title": "Operaatio Valhalla",
+    "type": "TV Show",
+    "status": "Watching",
+    "stillFilming": true,
+    "addedAt": "2026-06-06T00:59:36.408Z"
+  },
+  {
+    "title": "La Brea",
+    "type": "TV Show",
+    "status": "Watching",
+    "stillFilming": true,
+    "addedAt": "2026-06-06T00:59:50.934Z"
+  },
+  {
+    "title": "Squid Game",
+    "type": "TV Show",
+    "status": "Completed",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T00:59:59.951Z"
+  },
+  {
+    "title": "The Rookie",
+    "type": "TV Show",
+    "status": "Watching",
+    "stillFilming": true,
+    "addedAt": "2026-06-06T01:00:05.386Z"
+  },
+  {
+    "title": "War of the Worlds",
+    "type": "TV Show",
+    "status": "Completed",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T01:00:11.754Z"
+  },
+  {
+    "title": "24",
+    "type": "TV Show",
+    "status": "Completed",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T01:00:17.293Z"
+  },
+  {
+    "title": "The Walking dead: Daryl Dixon",
+    "type": "TV Show",
+    "status": "Watching",
+    "stillFilming": true,
+    "addedAt": "2026-06-06T01:00:23.853Z"
+  },
+  {
+    "title": "The Walking dead: Dead City",
+    "type": "TV Show",
+    "status": "Watching",
+    "stillFilming": true,
+    "addedAt": "2026-06-06T01:00:28.311Z"
+  },
+  {
+    "title": "The Expanse",
+    "type": "TV Show",
+    "status": "Completed",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T01:00:35.893Z"
+  },
+  {
+    "title": "Vaka (Wake)",
+    "type": "TV Show",
+    "status": "Completed",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T01:00:55.479Z"
+  },
+  {
+    "title": "Luottomies",
+    "type": "TV Show",
+    "status": "Completed",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T01:01:00.468Z"
+  },
+  {
+    "title": "Luottomies-elokuva: All In",
+    "type": "Movie",
+    "status": "Completed",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T01:01:05.222Z"
+  },
+  {
+    "title": "Jään Vangit",
+    "type": "TV Show",
+    "status": "Completed",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T01:01:11.030Z"
+  },
+  {
+    "title": "Walking dead The world Beyond",
+    "type": "TV Show",
+    "status": "Watching",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T01:01:17.791Z"
+  }
+]
