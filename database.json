@@ -285,5 +285,96 @@
     "status": "Watching",
     "stillFilming": false,
     "addedAt": "2026-06-06T01:01:17.791Z"
+  },
+  {
+    "title": "The Battery",
+    "type": "Movie",
+    "status": "Plan to Watch",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T01:09:04.040Z"
+  },
+  {
+    "title": "Geostorm",
+    "type": "Movie",
+    "status": "Plan to Watch",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T01:09:07.495Z"
+  },
+  {
+    "title": "The Pacific",
+    "type": "Movie",
+    "status": "Plan to Watch",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T01:09:10.243Z"
+  },
+  {
+    "title": "Zoo",
+    "type": "Movie",
+    "status": "Plan to Watch",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T01:09:28.507Z"
+  },
+  {
+    "title": "Le Palma",
+    "type": "Movie",
+    "status": "Completed",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T01:09:54.443Z"
+  },
+  {
+    "title": "13 hours",
+    "type": "Movie",
+    "status": "Plan to Watch",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T01:10:25.647Z"
+  },
+  {
+    "title": "World War Z",
+    "type": "Movie",
+    "status": "Completed",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T01:10:51.590Z"
+  },
+  {
+    "title": "The Old Guard",
+    "type": "Movie",
+    "status": "Completed",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T01:10:59.954Z"
+  },
+  {
+    "title": "The Old Guard 2",
+    "type": "Movie",
+    "status": "Completed",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T01:11:03.774Z"
+  },
+  {
+    "title": "Maze Runner",
+    "type": "Movie",
+    "status": "Completed",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T01:11:06.678Z"
+  },
+  {
+    "title": "Maze Runner: The Scorch Trials",
+    "type": "Movie",
+    "status": "Completed",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T01:11:09.634Z"
+  },
+  {
+    "title": "Maze Runner: The Death Cure",
+    "type": "Movie",
+    "status": "Completed",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T01:11:12.230Z"
+  },
+  {
+    "title": "Afterburn",
+    "type": "Movie",
+    "status": "Completed",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T01:11:26.090Z"
   }
 ]
