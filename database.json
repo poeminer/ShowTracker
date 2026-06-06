@@ -376,5 +376,40 @@
     "status": "Completed",
     "stillFilming": false,
     "addedAt": "2026-06-06T01:11:26.090Z"
+  },
+  {
+    "title": "Star Wars: Acolyte",
+    "type": "TV Show",
+    "status": "Completed",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T01:13:34.737Z"
+  },
+  {
+    "title": "Star Wars: Episode 1 - The Phantom Menace",
+    "type": "Movie",
+    "status": "Completed",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T01:13:49.160Z"
+  },
+  {
+    "title": "Star Wars: Episode 2 - Attack of the Clones",
+    "type": "Movie",
+    "status": "Completed",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T01:14:01.120Z"
+  },
+  {
+    "title": "Star Wars: Episode 3 - Revenge of the Sith",
+    "type": "Movie",
+    "status": "Completed",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T01:14:11.784Z"
+  },
+  {
+    "title": "Star Wars: Obi-Wan Kenobi",
+    "type": "TV Show",
+    "status": "Completed",
+    "stillFilming": false,
+    "addedAt": "2026-06-06T01:14:25.780Z"
   }
 ]
