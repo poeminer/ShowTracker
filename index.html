@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Media Tracker</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h1, h2 { color: #ffffff; }
+        .card {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; font-size: 0.9em; color: #aaaaaa; }
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #333;
+            border-radius: 4px;
+            background-color: #2c2c2c;
+            color: #ffffff;
+            box-sizing: border-box;
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .checkbox-group input { width: auto; cursor: pointer; }
+        .checkbox-group label { margin: 0; cursor: pointer; }
+        
+        button {
+            background-color: #bb86fc;
+            color: #000000;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+        }
+        button:hover { background-color: #9d4edd; color: white; }
+        .db-controls { display: flex; gap: 10px; margin-bottom: 20px; }
+        .db-controls button, .db-controls input { width: 50%; margin: 0; }
+        input[type="file"] { display: none; }
+        .file-upload-label {
+            background-color: #03dac6;
+            color: #000;
+            text-align: center;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        .file-upload-label:hover { background-color: #018786; color: white; }
+        
+        .filter-bar {
+            background-color: #1e1e1e;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .filter-row { display: flex; gap: 10px; }
+        .filter-row select { width: 50%; }
+
+        .media-item {
+            background-color: #2c2c2c;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .media-info h3 { margin: 0 0 5px 0; color: #bb86fc; }
+        .media-meta { font-size: 0.85em; color: #aaaaaa; margin-bottom: 8px; }
+        
+        /* Styled IMDb Link */
+        .imdb-link {
+            display: inline-block;
+            font-size: 0.8em;
+            color: #f5c518; /* Classic IMDb Yellow */
+            text-decoration: none;
+            background-color: rgba(245, 197, 24, 0.1);
+            padding: 3px 8px;
+            border-radius: 4px;
+            border: 1px solid rgba(245, 197, 24, 0.3);
+            font-weight: bold;
+        }
+        .imdb-link:hover {
+            background-color: #f5c518;
+            color: #000000;
+        }
+
+        .delete-btn {
+            background-color: #cf6679;
+            color: white;
+            width: auto;
+            padding: 5px 10px;
+            font-size: 0.8em;
+        }
+        .delete-btn:hover { background-color: #b00020; }
+        
+        .toggle-container {
+            margin-bottom: 15px;
+            background-color: #1e1e1e;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Media Tracker</h1>
+
+    <div class="db-controls">
+        <label for="file-upload" class="file-upload-label">📁 Restore Backup (.json)</label>
+        <input type="file" id="file-upload" accept=".json" onchange="importDatabase(event)">
+        <button onclick="exportDatabase()">💾 Save Backup (.json)</button>
+    </div>
+
+    <div class="toggle-container checkbox-group">
+        <input type="checkbox" id="toggle-form" onchange="toggleAddMenu()">
+        <label for="toggle-form">Show "Add Media" Tab</label>
+    </div>
+
+    <div class="card" id="add-media-card" style="display: none;">
+        <h2>Add Show / Movie</h2>
+        <div class="form-group">
+            <label>Title</label>
+            <input type="text" id="title" placeholder="e.g., The Sopranos" required>
+        </div>
+        <div class="form-group">
+            <label>Type</label>
+            <select id="type">
+                <option value="TV Show">TV Show</option>
+                <option value="Movie">Movie</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Status</label>
+            <select id="status">
+                <option value="Plan to Watch">Plan to Watch</option>
+                <option value="Watching">Watching</option>
+                <option value="Completed">Completed</option>
+            </select>
+        </div>
+        
+        <div class="form-group checkbox-group" style="margin-top: 20px; margin-bottom: 20px;">
+            <input type="checkbox" id="still-filming">
+            <label for="still-filming">Is it still filming/airing?</label>
+        </div>
+
+        <button onclick="addMedia()">Add to Tracker</button>
+    </div>
+
+    <h2>Your Watchlist</h2>
+    <div class="filter-bar">
+        <input type="text" id="search-bar" placeholder="🔍 Search by title..." oninput="renderList()">
+        <div class="filter-row">
+            <select id="filter-type" onchange="renderList()">
+                <option value="All">All Types</option>
+                <option value="TV Show">TV Shows</option>
+                <option value="Movie">Movies</option>
+            </select>
+            <select id="filter-status" onchange="renderList()">
+                <option value="All">All Statuses</option>
+                <option value="Plan to Watch">Plan to Watch</option>
+                <option value="Watching">Watching</option>
+                <option value="Completed">Completed</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="media-list"></div>
+
+    <script>
+        let database = [];
+
+        // --- AUTOMATIC SAVING & GITHUB LOADING ---
+        async function loadInitialData() {
+            const savedData = localStorage.getItem('myMediaTrackerDB');
+            if (savedData) {
+                database = JSON.parse(savedData);
+                renderList();
+                return;
+            }
+
+            try {
+                const response = await fetch('database.json');
+                if (response.ok) {
+                    const data = await response.json();
+                    database = data;
+                    autoSave(); 
+                    renderList();
+                } else {
+                    renderList(); 
+                }
+            } catch (error) {
+                console.log("Could not auto-load database.json. Normal if running locally offline.");
+                renderList();
+            }
+        }
+
+        window.onload = loadInitialData;
+
+        function autoSave() {
+            localStorage.setItem('myMediaTrackerDB', JSON.stringify(database));
+        }
+
+        // --- UI CONTROLS ---
+        function toggleAddMenu() {
+            const formCard = document.getElementById('add-media-card');
+            const isChecked = document.getElementById('toggle-form').checked;
+            formCard.style.display = isChecked ? 'block' : 'none';
+        }
+
+        function renderList() {
+            const listElement = document.getElementById('media-list');
+            listElement.innerHTML = ''; 
+
+            const searchQuery = document.getElementById('search-bar').value.toLowerCase().trim();
+            const filterType = document.getElementById('filter-type').value;
+            const filterStatus = document.getElementById('filter-status').value;
+
+            let processedList = database.map((item, index) => ({ ...item, originalIndex: index }));
+
+            if (searchQuery) {
+                processedList = processedList.filter(item => item.title.toLowerCase().includes(searchQuery));
+            }
+            if (filterType !== 'All') {
+                processedList = processedList.filter(item => item.type === filterType);
+            }
+            if (filterStatus !== 'All') {
+                processedList = processedList.filter(item => item.status === filterStatus);
+            }
+
+            processedList.reverse();
+
+            if (processedList.length === 0) {
+                listElement.innerHTML = '<p style="color: #888; text-align: center; margin-top: 20px;">No matching titles found.</p>';
+                return;
+            }
+
+            processedList.forEach((item) => {
+                const filmingStatus = item.stillFilming ? '🎥 Still Filming' : '✅ Finished';
+                
+                // Dynamically build the search link for IMDb
+                const encodedTitle = encodeURIComponent(item.title);
+                const imdbUrl = `https://www.imdb.com/find/?q=${encodedTitle}`;
+                
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'media-item';
+                itemDiv.innerHTML = `
+                    <div class="media-info">
+                        <h3>${item.title}</h3>
+                        <div class="media-meta">
+                            ${item.type} • Status: <strong>${item.status}</strong> • ${filmingStatus}
+                        </div>
+                        <a href="${imdbUrl}" target="_blank" class="imdb-link">🎬 IMDb Search</a>
+                    </div>
+                    <button class="delete-btn" onclick="deleteItem(${item.originalIndex})">Remove</button>
+                `;
+                listElement.appendChild(itemDiv);
+            });
+        }
+
+        function addMedia() {
+            const titleInput = document.getElementById('title').value.trim();
+            if (!titleInput) {
+                alert("Please enter a title.");
+                return;
+            }
+
+            const newItem = {
+                title: titleInput,
+                type: document.getElementById('type').value,
+                status: document.getElementById('status').value,
+                stillFilming: document.getElementById('still-filming').checked,
+                addedAt: new Date().toISOString()
+            };
+
+            database.push(newItem);
+            autoSave(); 
+            
+            document.getElementById('title').value = '';
+            document.getElementById('still-filming').checked = false;
+            
+            renderList();
+        }
+
+        function deleteItem(index) {
+            const confirmed = confirm(`Are you sure you want to remove "${database[index].title}" from your tracker?`);
+            if (confirmed) {
+                database.splice(index, 1);
+                autoSave(); 
+                renderList();
+            }
+        }
+
+        // --- DATABASE FILE OPERATIONS (BACKUPS) ---
+        function exportDatabase() {
+            const dataStr = JSON.stringify(database, null, 2);
+            const blob = new Blob([dataStr], { type: 'application/json' });
+            
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'database.json';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        function importDatabase(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const parsedData = JSON.parse(e.target.result);
+                    if (Array.isArray(parsedData)) {
+                        database = parsedData;
+                        autoSave(); 
+                        renderList();
+                        alert("Database restored successfully!");
+                    } else {
+                        alert("Invalid database format. Expected a JSON array.");
+                    }
+                } catch (error) {
+                    alert("Error reading JSON file.");
+                }
+            };
+            reader.readAsText(file);
+            event.target.value = '';
+        }
+    </script>
+</body>
+</html>
